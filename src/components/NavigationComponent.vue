@@ -9,7 +9,7 @@
           
       </v-app-bar-nav-icon>
 
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>Library Management</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -36,13 +36,9 @@
         </template>
 
         <v-list>
-          <v-list-item
-            v-for="n in 5"
-            :key="n"
-            @click="() => {}"
-          >
-            <v-list-item-title>Option {{ n }}</v-list-item-title>
-          </v-list-item>
+          <v-btn icon v-on:click="toggle_dark_mode">
+              <v-icon>mdi-theme-light-dark</v-icon>
+          </v-btn>
         </v-list>
       </v-menu>
     </v-app-bar>
@@ -95,5 +91,21 @@
         ],
       }
     },
+    methods: {
+    toggle_dark_mode: function () {
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+        localStorage.setItem("dark_theme", this.$vuetify.theme.dark.toString());
+    }
+  },
+    mounted() {
+      const theme = localStorage.getItem("dark_theme");
+      if (theme) {
+          if (theme == "true") {
+              this.$vuetify.theme.dark = true;
+          } else {
+              this.$vuetify.theme.dark = false;
+          }
+      }
+  },
   }
 </script>

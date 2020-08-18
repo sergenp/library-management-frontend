@@ -1,6 +1,7 @@
 <template>
 <div>
     <v-app-bar
+      app
       color="red darken-4"
       dense
       dark
@@ -44,9 +45,8 @@
       </v-menu>
         <template v-slot:extension>
           <v-tabs align-with-title>
-            <v-tab to="/">Tab 1</v-tab>
-            <v-tab to="/about">Tab 2</v-tab>
-            <v-tab>Tab 3</v-tab>
+            <v-tab to="/">Home</v-tab>
+            <v-tab to="/about">About</v-tab>
           </v-tabs>
         </template>
     </v-app-bar>
@@ -61,7 +61,7 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Library Management</v-list-item-title>
+          <v-list-item-title>Library</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 

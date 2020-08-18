@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app app>
    <NavigationComponent />
     <v-main>
         <v-container class="fill-height">

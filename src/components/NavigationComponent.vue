@@ -1,15 +1,16 @@
 <template>
 <div>
     <v-app-bar
-      color="deep-purple accent-4"
+      color="red darken-4"
       dense
       dark
+      collapse-on-scroll
     >
       <v-app-bar-nav-icon @click="drawer = true">
           
       </v-app-bar-nav-icon>
 
-      <v-toolbar-title>Library Management</v-toolbar-title>
+      <v-toolbar-title>Library</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -41,6 +42,13 @@
           </v-btn>
         </v-list>
       </v-menu>
+        <template v-slot:extension>
+          <v-tabs align-with-title>
+            <v-tab to="/">Tab 1</v-tab>
+            <v-tab to="/about">Tab 2</v-tab>
+            <v-tab>Tab 3</v-tab>
+          </v-tabs>
+        </template>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
@@ -49,27 +57,25 @@
     >
       <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          <v-img :src="require('../assets/library.png')"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>Library Management</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
       <v-divider></v-divider>
 
-      <v-list dense>
-
+      <v-list>
         <v-list-item
           v-for="item in items"
           :key="item.title"
-          link
+          :to="item.link"
         >
           <v-list-item-icon>
             <v-icon>mdi-{{ item.icon }}</v-icon>
           </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
@@ -86,8 +92,8 @@
       return {
         drawer: null,
         items: [
-          { title: 'Home', icon: 'home' },
-          { title: 'About', icon: 'progress-question' },
+          { title: 'Home', icon: 'home', link:'/' },
+          { title: 'About', icon: 'progress-question', link:'/about' },
         ],
       }
     },

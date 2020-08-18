@@ -4,7 +4,7 @@
     <v-main>
         <v-container class="fill-height">
           <v-row align="center" justify="center">
-            <HelloWorld/>
+              <router-view></router-view>
           </v-row>
         </v-container>
     </v-main>
@@ -13,14 +13,12 @@
 
 <script>
 import NavigationComponent from "./components/NavigationComponent";
-import HelloWorld from "./components/HelloWorld";
 
 export default {
   name: "App",
 
   components: {
     NavigationComponent,
-    HelloWorld
   },
 
   data: () => ({

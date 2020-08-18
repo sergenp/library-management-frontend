@@ -7,11 +7,7 @@
       dark
       collapse-on-scroll
     >
-      <v-app-bar-nav-icon @click="drawer = true">
-          
-      </v-app-bar-nav-icon>
-
-      <v-toolbar-title>Library</v-toolbar-title>
+      <v-toolbar-title>Library Management</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -44,44 +40,12 @@
         </v-list>
       </v-menu>
         <template v-slot:extension>
-          <v-tabs align-with-title>
+          <v-tabs>
             <v-tab to="/">Home</v-tab>
             <v-tab to="/about">About</v-tab>
           </v-tabs>
         </template>
     </v-app-bar>
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-    >
-      <v-list-item>
-        <v-list-item-avatar>
-          <v-img :src="require('../assets/library.png')"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>Library</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-list>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          :to="item.link"
-        >
-          <v-list-item-icon>
-            <v-icon>mdi-{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
 </div>
 </template>
 

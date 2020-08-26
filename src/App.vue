@@ -2,10 +2,8 @@
   <v-app app>
    <NavigationComponent />
     <v-main>
-        <v-container class="fill-height">
-          <v-row align="center" justify="center">
-              <router-view></router-view>
-          </v-row>
+        <v-container>
+          <router-view></router-view>
         </v-container>
     </v-main>
   </v-app>

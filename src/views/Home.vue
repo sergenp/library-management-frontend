@@ -1,42 +1,65 @@
 <template>
-<div>
   <v-card>
-    <v-card-title>Home</v-card-title>
-      <v-list>
-        <v-list-item
-          v-for="book in books"
-          :key="book.title"
-        >
-          <v-list-item-content>
-            <v-list-item-title>{{ book.title }}</v-list-item-title>
-            <v-list-item-content>{{ book.description }}</v-list-item-content>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+    <v-card-title>Recent Books People Have Looked For</v-card-title>
+    <v-card-text>
+      <v-row>
+        <v-col v-for="book in books" :key="book.title" cols="6">
+          <v-card>
+            <v-card-title>{{book.title}}</v-card-title>
+            <v-card-text>
+              <v-img contain height="100px" width="150px" src="@/assets/book.jpg"></v-img>
+              {{book.description}}
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-card-text>
   </v-card>
-</div>
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
-  data () {
+  name: "Home",
+  data() {
     return {
       books: [
-        { title: 'Book 1', description: 'This is the book ones description'},
-        { title: 'Book 2', description: 'This is the book twos description' },
-        { title: 'Book 1', description: 'This is the book ones description'},
-        { title: 'Book 2', description: 'This is the book twos description' },
-        { title: 'Book 1', description: 'This is the book ones description'},
-        { title: 'Book 2', description: 'This is the book twos description' },
-        { title: 'Book 1', description: 'This is the book ones description'},
-        { title: 'Book 2', description: 'This is the book twos description' },
-        { title: 'Book 1', description: 'This is the book ones description'},
-        { title: 'Book 2', description: 'This is the book twos description' },
-
+        {
+          title: "Book 1",
+          description: "This is the book ones description",
+          cover: "book.jpg",
+        },
+        {
+          title: "Book 2",
+          description: "This is the book twos description",
+          cover: "book.jpg",
+        },
+        {
+          title: "Book 2",
+          description: "This is the book twos description",
+          cover: "book.jpg",
+        },
+        {
+          title: "Book 2",
+          description: "This is the book twos description",
+          cover: "book.jpg",
+        },
+        {
+          title: "Book 2",
+          description: "This is the book twos description",
+          cover: "book.jpg",
+        },
+        {
+          title: "Book 2",
+          description: "This is the book twos description",
+          cover: "book.jpg",
+        },
+        {
+          title: "Book 2",
+          description: "This is the book twos description",
+          cover: "book.jpg",
+        },
       ],
-    }
-  }
-}
+    };
+  },
+};
 </script>
